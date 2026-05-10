@@ -52,7 +52,7 @@ body::before{
     z-index:-2;
 }
 
-/* خطوط UFC */
+/* خطوط */
 
 .lines{
     position:fixed;
@@ -158,17 +158,20 @@ header{
     padding:24px 18px 70px;
 }
 
-/* بانر */
+/* البانر */
 
 .banner{
     position:relative;
     width:100%;
-    height:260px;
+    height:320px;
 
     border-radius:30px;
     overflow:hidden;
 
-    background:url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1400&auto=format&fit=crop') center/cover;
+    background:
+    radial-gradient(circle at center,
+    rgba(255,0,0,.18),
+    rgba(0,0,0,.92));
 
     margin-bottom:28px;
 
@@ -184,39 +187,17 @@ header{
     background:
     linear-gradient(to top,
     rgba(0,0,0,.88),
-    rgba(0,0,0,.2));
+    rgba(0,0,0,.15));
 }
 
-/* محتوى البانر */
-
-.banner-content{
-    position:absolute;
-    left:28px;
-    bottom:28px;
-    z-index:5;
-}
-
-.banner-content h1{
-    font-size:58px;
-    letter-spacing:4px;
-    line-height:1;
-}
-
-.banner-content p{
-    margin-top:10px;
-    opacity:.75;
-    font-size:15px;
-    letter-spacing:2px;
-}
-
-/* الحقوق */
+/* حقوق */
 
 .croco{
     position:absolute;
     top:22px;
     right:22px;
 
-    z-index:5;
+    z-index:20;
 
     padding:10px 16px;
 
@@ -237,6 +218,100 @@ header{
 
 .croco span{
     color:#ff0000;
+}
+
+/* المقاتلين */
+
+.fighters{
+    position:relative;
+    z-index:5;
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+
+    padding:0 20px;
+}
+
+.fighter{
+    height:95%;
+    object-fit:contain;
+
+    filter:
+    drop-shadow(0 0 20px rgba(255,0,0,.25));
+
+    pointer-events:none;
+}
+
+.left-fighter{
+    transform:translateX(-10px);
+}
+
+.right-fighter{
+    transform:translateX(10px);
+}
+
+.vs-area{
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    text-align:center;
+
+    z-index:10;
+}
+
+.event-date{
+    display:inline-block;
+
+    padding:8px 16px;
+
+    border-radius:999px;
+
+    background:rgba(0,0,0,.6);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    font-size:13px;
+    letter-spacing:2px;
+
+    margin-bottom:14px;
+
+    backdrop-filter:blur(10px);
+}
+
+.vs-area h1{
+    font-size:60px;
+    line-height:1;
+
+    letter-spacing:4px;
+
+    text-shadow:
+    0 0 20px rgba(255,0,0,.45);
+}
+
+.vs{
+    font-size:34px;
+
+    color:#ff0000;
+
+    margin:10px 0;
+
+    text-shadow:
+    0 0 15px rgba(255,0,0,.5);
+}
+
+.vs-area h2{
+    font-size:20px;
+    letter-spacing:4px;
+
+    opacity:.75;
 }
 
 /* كارد المشاهدة */
@@ -273,7 +348,7 @@ header{
     display:block;
 }
 
-/* تأثير سينمائي */
+/* تأثير */
 
 .player-wrapper::after{
     content:"";
@@ -338,29 +413,6 @@ header{
     }
 }
 
-/* أزرار عائمة */
-.fight-btn{
-    width:52px;
-    height:52px;
-
-    border-radius:16px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:rgba(0,0,0,.6);
-
-    border:1px solid rgba(255,255,255,.08);
-
-    backdrop-filter:blur(10px);
-
-    font-size:20px;
-
-    box-shadow:
-    0 0 15px rgba(255,0,0,.1);
-}
-
 /* المعلومات */
 
 .info{
@@ -389,9 +441,6 @@ header{
 }
 
 .btn{
-    border:none;
-    cursor:pointer;
-
     padding:15px 26px;
 
     border-radius:18px;
@@ -400,7 +449,7 @@ header{
 
     font-size:17px;
 
-    transition:.25s;
+    user-select:none;
 }
 
 .watch-btn{
@@ -409,10 +458,6 @@ header{
 
     box-shadow:
     0 0 20px rgba(255,0,0,.35);
-}
-
-.watch-btn:hover{
-    transform:translateY(-2px) scale(1.02);
 }
 
 .info-btn{
@@ -491,11 +536,27 @@ footer span{
 @media(max-width:768px){
 
     .banner{
-        height:190px;
+        height:230px;
     }
 
-    .banner-content h1{
-        font-size:38px;
+    .fighter{
+        height:80%;
+    }
+
+    .vs-area h1{
+        font-size:34px;
+    }
+
+    .vs{
+        font-size:24px;
+    }
+
+    .vs-area h2{
+        font-size:14px;
+    }
+
+    .event-date{
+        font-size:10px;
     }
 
     .info h2{
@@ -548,9 +609,34 @@ footer span{
             DESIGNED BY <span>CROCO</span>
         </div>
 
-        <div class="banner-content">
-            <h1>FIGHT NIGHT</h1>
-            <p>ULTIMATE FIGHTING EXPERIENCE</p>
+        <div class="fighters">
+
+            <img
+            class="fighter left-fighter"
+            src="https://dmxg5wxfqgb4u.cloudfront.net/styles/inline/s3/2024-10/CHIMAEV_KHAMZAT_L_BELT_10-26.png"
+            alt="Khamzat Chimaev">
+
+            <div class="vs-area">
+
+                <div class="event-date">
+                    MAY 10 • LIVE TODAY
+                </div>
+
+                <h1>CHIMAEV</h1>
+
+                <div class="vs">
+                    VS
+                </div>
+
+                <h2>MAIN EVENT</h2>
+
+            </div>
+
+            <img
+            class="fighter right-fighter"
+            src="https://dmxg5wxfqgb4u.cloudfront.net/styles/inline/s3/2025-02/DU_PLESSIS_DRICUS_BELT_02-08.png"
+            alt="Opponent">
+
         </div>
 
     </div>
@@ -579,22 +665,23 @@ footer span{
 
         <div class="info">
 
-            <h2>UFC MAIN EVENT</h2>
+            <h2>KHAMZAT CHIMAEV VS DRICUS DU PLESSIS</h2>
 
             <p>
-                شاهد أقوى نزالات الـ UFC بتجربة احترافية كاملة
-                مع أجواء قتالية وتأثيرات سينمائية مستوحاة من الحلبة.
+                تابع النزال الرئيسي الليلة مباشرة في UFC Fight Night
+                بين الوحش الشيشاني حمزه تشيماييف والبطل دريكوس دو بليسي
+                في مواجهة قوية على اللقب.
             </p>
 
             <div class="actions">
 
-                <button class="btn watch-btn">
-                    ▶ WATCH NOW
-                </button>
+                <div class="btn watch-btn">
+                    ● LIVE NOW
+                </div>
 
-                <button class="btn info-btn">
-                    EVENT INFO
-                </button>
+                <div class="btn info-btn">
+                    MAY 10 • MAIN CARD
+                </div>
 
             </div>
 
