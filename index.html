@@ -23,17 +23,19 @@ body{
     overflow-x:hidden;
 }
 
-/* خلفية */
+/* الخلفية */
 
 body::before{
     content:"";
     position:fixed;
     inset:0;
+
     background:
     radial-gradient(circle at top,
     rgba(255,0,0,.15),
     transparent 35%),
     linear-gradient(180deg,#000,#050505);
+
     z-index:-3;
 }
 
@@ -42,17 +44,21 @@ body::before{
 .grid{
     position:fixed;
     inset:0;
+
     background-image:
     linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+
     background-size:40px 40px;
+
     mask-image:linear-gradient(to bottom,
     transparent,
     rgba(0,0,0,.9));
+
     z-index:-2;
 }
 
-/* خطوط متحركة */
+/* الخطوط */
 
 .lines{
     position:fixed;
@@ -63,14 +69,17 @@ body::before{
 
 .lines span{
     position:absolute;
+
     width:2px;
     height:200%;
+
     background:linear-gradient(
     transparent,
     rgba(255,0,0,.45),
     transparent);
 
     opacity:.15;
+
     animation:moveLine linear infinite;
 }
 
@@ -110,6 +119,8 @@ header{
     border-bottom:1px solid rgba(255,255,255,.06);
 }
 
+/* اللوجو */
+
 .logo{
     font-size:42px;
     font-weight:700;
@@ -118,8 +129,12 @@ header{
 
 .logo span{
     color:#ff0000;
-    text-shadow:0 0 15px rgba(255,0,0,.5);
+
+    text-shadow:
+    0 0 15px rgba(255,0,0,.5);
 }
+
+/* الأيقونات */
 
 .header-icons{
     display:flex;
@@ -137,6 +152,7 @@ header{
     border-radius:14px;
 
     background:#101010;
+
     border:1px solid rgba(255,255,255,.05);
 
     font-size:18px;
@@ -150,7 +166,9 @@ header{
 .container{
     width:100%;
     max-width:1150px;
+
     margin:auto;
+
     padding:24px 18px 70px;
 }
 
@@ -158,6 +176,7 @@ header{
 
 .banner{
     position:relative;
+
     width:100%;
     height:320px;
 
@@ -177,6 +196,7 @@ header{
 
 .banner::after{
     content:"";
+
     position:absolute;
     inset:0;
 
@@ -190,6 +210,7 @@ header{
 
 .croco{
     position:absolute;
+
     top:22px;
     right:22px;
 
@@ -213,42 +234,50 @@ header{
     color:#ff0000;
 }
 
+/* ========================= */
 /* المقاتلين */
+/* ========================= */
 
 .fighters{
     position:relative;
-    z-index:5;
-
     width:100%;
     height:100%;
-
-    display:flex;
-    align-items:flex-end;
-    justify-content:space-between;
-
-    padding:0 20px;
 }
+
+/* الشكل العام */
 
 .fighter{
     position:absolute;
     bottom:0;
 
-    height:95%;
     object-fit:contain;
+    pointer-events:none;
 
     filter:
-    drop-shadow(0 0 20px rgba(255,0,0,.25));
+    drop-shadow(0 0 25px rgba(255,0,0,.25));
+
+    transition:.3s;
 }
 
+/* حمزه */
+
 .left-fighter{
-    left:0;
+    left:-10px;
+
+    height:92%;
+    z-index:3;
+}
+
+/* دريكوس */
+
+.right-fighter{
+    right:-40px;
+
+    height:105%;
     z-index:2;
 }
 
-.right-fighter{
-    right:0;
-    z-index:1;
-}
+/* النص */
 
 .vs-area{
     position:absolute;
@@ -257,10 +286,9 @@ header{
     top:50%;
 
     transform:translate(-50%,-50%);
+    z-index:10;
 
     text-align:center;
-
-    z-index:10;
 }
 
 .event-date{
@@ -328,8 +356,10 @@ header{
 
 .player-wrapper{
     position:relative;
+
     width:100%;
     aspect-ratio:16/9;
+
     background:#000;
 }
 
@@ -344,10 +374,11 @@ header{
     display:block;
 }
 
-/* تأثير سينمائي */
+/* تأثير */
 
 .player-wrapper::after{
     content:"";
+
     position:absolute;
     inset:0;
 
@@ -365,6 +396,7 @@ header{
 
 .live{
     position:absolute;
+
     top:18px;
     left:18px;
 
@@ -422,7 +454,9 @@ header{
 
 .info p{
     color:#b9b9b9;
+
     line-height:1.8;
+
     font-size:15px;
 }
 
@@ -463,7 +497,7 @@ header{
     border:1px solid rgba(255,255,255,.06);
 }
 
-/* سكاشن */
+/* السكاشن */
 
 .section-title{
     margin-top:42px;
@@ -477,7 +511,10 @@ header{
 
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(240px,1fr));
+
     gap:18px;
 }
 
@@ -494,6 +531,7 @@ header{
 
 .card:hover{
     transform:translateY(-4px);
+
     box-shadow:
     0 0 20px rgba(255,0,0,.12);
 }
@@ -501,6 +539,7 @@ header{
 .card img{
     width:100%;
     height:170px;
+
     object-fit:cover;
 }
 
@@ -516,9 +555,11 @@ header{
 
 footer{
     margin-top:55px;
+
     text-align:center;
 
     color:#777;
+
     font-size:14px;
     letter-spacing:2px;
 }
@@ -528,7 +569,7 @@ footer span{
 }
 
 /* ========================= */
-/* تحسين الموبايل بالكامل */
+/* الموبايل */
 /* ========================= */
 
 @media(max-width:768px){
@@ -556,75 +597,58 @@ footer span{
     .icon{
         width:42px;
         height:42px;
+
         border-radius:12px;
+
         font-size:16px;
     }
-
-    /* البانر */
 
     .banner{
         height:230px;
         border-radius:24px;
     }
 
-    .fighters{
-        padding:0;
-        align-items:flex-end;
-    }
-
-    .fighter{
-        position:absolute;
-        bottom:0;
-
-        height:92%;
-        width:auto;
-
-        object-fit:contain;
-    }
+    /* حمزه */
 
     .left-fighter{
-        left:-35px;
+        left:-28px;
+        height:88%;
     }
 
+    /* دريكوس */
+
     .right-fighter{
-        right:-30px;
+        right:-55px;
+        height:102%;
     }
+
+    /* النص */
 
     .vs-area{
         width:100%;
-        top:52%;
-        padding:0 10px;
-    }
-
-    .event-date{
-        font-size:10px;
-        padding:7px 12px;
-        margin-bottom:10px;
+        padding:0 12px;
     }
 
     .vs-area h1{
         font-size:42px;
-        letter-spacing:3px;
     }
 
     .vs{
         font-size:24px;
-        margin:4px 0;
     }
 
     .vs-area h2{
         font-size:13px;
-        letter-spacing:3px;
     }
 
     .croco{
         top:12px;
         right:12px;
+
         font-size:10px;
+
         padding:7px 12px;
     }
-
-    /* الفيديو */
 
     .watch-card{
         border-radius:24px;
@@ -647,8 +671,6 @@ footer span{
         width:8px;
         height:8px;
     }
-
-    /* المعلومات */
 
     .info{
         padding:18px;
@@ -673,13 +695,17 @@ footer span{
     .btn{
         width:100%;
         text-align:center;
+
         padding:14px;
+
         font-size:15px;
+
         border-radius:14px;
     }
 
     .section-title{
         font-size:24px;
+
         margin-top:34px;
         margin-bottom:16px;
     }
@@ -749,10 +775,14 @@ footer span{
 
         <div class="fighters">
 
+            <!-- حمزه -->
+
             <img
-class="fighter left-fighter"
-src="https://files.catbox.moe/xlvr0b.png"
-alt="Khamzat Chimaev">
+            class="fighter left-fighter"
+            src="https://files.catbox.moe/xlvr0b.png"
+            alt="Khamzat Chimaev">
+
+            <!-- النص -->
 
             <div class="vs-area">
 
@@ -770,10 +800,12 @@ alt="Khamzat Chimaev">
 
             </div>
 
+            <!-- دريكوس -->
+
             <img
-class="fighter right-fighter"
-src="https://dmxg5wxfqgb4u.cloudfront.net/styles/inline/s3/2025-02/DU_PLESSIS_DRICUS_BELT_02-08.png"
-alt="Dricus Du Plessis">
+            class="fighter right-fighter"
+            src="https://dmxg5wxfqgb4u.cloudfront.net/styles/inline/s3/2025-02/DU_PLESSIS_DRICUS_BELT_02-08.png"
+            alt="Dricus Du Plessis">
 
         </div>
 
@@ -829,7 +861,9 @@ alt="Dricus Du Plessis">
 
     <!-- سكشن -->
 
-    <h2 class="section-title">UPCOMING FIGHTS</h2>
+    <h2 class="section-title">
+        UPCOMING FIGHTS
+    </h2>
 
     <div class="cards">
 
@@ -854,7 +888,8 @@ alt="Dricus Du Plessis">
     </div>
 
     <footer>
-        © 2026 ALL RIGHTS RESERVED — <span>CROCO</span>
+        © 2026 ALL RIGHTS RESERVED —
+        <span>CROCO</span>
     </footer>
 
 </div>
