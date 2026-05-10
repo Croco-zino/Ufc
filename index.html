@@ -37,7 +37,7 @@ body::before{
     z-index:-3;
 }
 
-/* جريد */
+/* الجريد */
 
 .grid{
     position:fixed;
@@ -52,7 +52,7 @@ body::before{
     z-index:-2;
 }
 
-/* خطوط */
+/* خطوط متحركة */
 
 .lines{
     position:fixed;
@@ -110,8 +110,6 @@ header{
     border-bottom:1px solid rgba(255,255,255,.06);
 }
 
-/* لوجو */
-
 .logo{
     font-size:42px;
     font-weight:700;
@@ -122,8 +120,6 @@ header{
     color:#ff0000;
     text-shadow:0 0 15px rgba(255,0,0,.5);
 }
-
-/* أيقونات */
 
 .header-icons{
     display:flex;
@@ -190,7 +186,7 @@ header{
     rgba(0,0,0,.15));
 }
 
-/* حقوق */
+/* الحقوق */
 
 .croco{
     position:absolute;
@@ -211,9 +207,6 @@ header{
 
     font-size:14px;
     letter-spacing:2px;
-
-    box-shadow:
-    0 0 18px rgba(255,0,0,.15);
 }
 
 .croco span{
@@ -237,21 +230,24 @@ header{
 }
 
 .fighter{
+    position:absolute;
+    bottom:0;
+
     height:95%;
     object-fit:contain;
 
     filter:
     drop-shadow(0 0 20px rgba(255,0,0,.25));
-
-    pointer-events:none;
 }
 
 .left-fighter{
-    transform:translateX(-10px);
+    left:0;
+    z-index:2;
 }
 
 .right-fighter{
-    transform:translateX(10px);
+    right:0;
+    z-index:1;
 }
 
 .vs-area{
@@ -348,7 +344,7 @@ header{
     display:block;
 }
 
-/* تأثير */
+/* تأثير سينمائي */
 
 .player-wrapper::after{
     content:"";
@@ -467,7 +463,7 @@ header{
     border:1px solid rgba(255,255,255,.06);
 }
 
-/* السكاشن */
+/* سكاشن */
 
 .section-title{
     margin-top:42px;
@@ -531,40 +527,182 @@ footer span{
     color:#ff0000;
 }
 
-/* Responsive */
+/* ========================= */
+/* تحسين الموبايل بالكامل */
+/* ========================= */
 
 @media(max-width:768px){
 
+    body{
+        overflow-x:hidden;
+    }
+
+    .container{
+        padding:14px 12px 50px;
+    }
+
+    header{
+        padding:16px 14px;
+    }
+
+    .logo{
+        font-size:28px;
+    }
+
+    .header-icons{
+        gap:8px;
+    }
+
+    .icon{
+        width:42px;
+        height:42px;
+        border-radius:12px;
+        font-size:16px;
+    }
+
+    /* البانر */
+
     .banner{
         height:230px;
+        border-radius:24px;
+    }
+
+    .fighters{
+        padding:0;
+        align-items:flex-end;
     }
 
     .fighter{
-        height:80%;
+        position:absolute;
+        bottom:0;
+
+        height:92%;
+        width:auto;
+
+        object-fit:contain;
     }
 
-    .vs-area h1{
-        font-size:34px;
+    .left-fighter{
+        left:-35px;
     }
 
-    .vs{
-        font-size:24px;
+    .right-fighter{
+        right:-30px;
     }
 
-    .vs-area h2{
-        font-size:14px;
+    .vs-area{
+        width:100%;
+        top:52%;
+        padding:0 10px;
     }
 
     .event-date{
         font-size:10px;
+        padding:7px 12px;
+        margin-bottom:10px;
+    }
+
+    .vs-area h1{
+        font-size:42px;
+        letter-spacing:3px;
+    }
+
+    .vs{
+        font-size:24px;
+        margin:4px 0;
+    }
+
+    .vs-area h2{
+        font-size:13px;
+        letter-spacing:3px;
+    }
+
+    .croco{
+        top:12px;
+        right:12px;
+        font-size:10px;
+        padding:7px 12px;
+    }
+
+    /* الفيديو */
+
+    .watch-card{
+        border-radius:24px;
+    }
+
+    .player-wrapper{
+        aspect-ratio:16/10;
+    }
+
+    .live{
+        top:10px;
+        left:10px;
+
+        padding:8px 12px;
+
+        font-size:12px;
+    }
+
+    .dot{
+        width:8px;
+        height:8px;
+    }
+
+    /* المعلومات */
+
+    .info{
+        padding:18px;
     }
 
     .info h2{
-        font-size:28px;
+        font-size:20px;
+        line-height:1.35;
+        margin-bottom:14px;
     }
 
-    .logo{
-        font-size:30px;
+    .info p{
+        font-size:14px;
+        line-height:1.9;
+    }
+
+    .actions{
+        margin-top:18px;
+        gap:10px;
+    }
+
+    .btn{
+        width:100%;
+        text-align:center;
+        padding:14px;
+        font-size:15px;
+        border-radius:14px;
+    }
+
+    .section-title{
+        font-size:24px;
+        margin-top:34px;
+        margin-bottom:16px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .card{
+        border-radius:20px;
+    }
+
+    .card img{
+        height:160px;
+    }
+
+    .card-content{
+        padding:16px;
+    }
+
+    footer{
+        font-size:11px;
+        margin-top:40px;
     }
 
 }
@@ -613,7 +751,7 @@ footer span{
 
             <img
             class="fighter left-fighter"
-            src="https://dmxg5wxfqgb4u.cloudfront.net/styles/inline/s3/2024-10/CHIMAEV_KHAMZAT_L_BELT_10-26.png"
+            src="https://images.tapology.com/headshot_images/8520/letterbox/Khamzat-Chimaev.png"
             alt="Khamzat Chimaev">
 
             <div class="vs-area">
@@ -634,14 +772,14 @@ footer span{
 
             <img
             class="fighter right-fighter"
-            src="https://dmxg5wxfqgb4u.cloudfront.net/styles/inline/s3/2025-02/DU_PLESSIS_DRICUS_BELT_02-08.png"
-            alt="Opponent">
+            src="https://images.tapology.com/headshot_images/81382/letterbox/Dricus_du_Plessis.jpg"
+            alt="Dricus Du Plessis">
 
         </div>
 
     </div>
 
-    <!-- كارد المشاهدة -->
+    <!-- المشغل -->
 
     <div class="watch-card">
 
